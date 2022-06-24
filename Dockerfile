@@ -28,7 +28,7 @@ RUN mkdir /app
 
 WORKDIR /app
 
-COPY --from builder /app/fatfat ./fatfat
+COPY --from=builder /app/fatfat ./fatfat
 CMD /bin/bash -c 'qemu-system-riscv64 --help'
 #CMD make run
 #CMD rm -f fs.img && make fs && python3 tester.py
